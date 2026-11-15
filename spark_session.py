@@ -20,6 +20,11 @@ def get_spark(kind: str = "glue", bucket: str = None, region: str = "us-east-2",
         .config("spark.sql.shuffle.partitions", "8")
         .config("spark.driver.memory", "3g")
         .config("spark.ui.enabled", "false")
+        # Everything runs on this one machine. Pinning the address to localhost stops Spark
+        # from using the computer's host name, which on Windows with Docker can resolve
+        # badly and leave the executor unable to register with the driver.
+        .config("spark.driver.bindAddress", "127.0.0.1")
+        .config("spark.driver.host", "127.0.0.1")
         # needed for MERGE INTO / ALTER TABLE ... on Iceberg tables
         .config("spark.sql.extensions",
                 "org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions")

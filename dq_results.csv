@@ -1,0 +1,8 @@
+check,status,detail
+raw = clean + rejected,PASS,raw=3475226 clean=3329565 rejected=145661
+no nulls in key columns,PASS,none
+trip_id is unique,PASS,0 duplicated ids
+clean rows obey the reject rules,PASS,0 rows break a rule
+every reject has a valid reject_reason,PASS,"0 missing, 0 unknown"
+daily_zone_metrics trips = clean rows,PASS,metrics=3329565 clean=3329565
+no extreme fares or distances (> 1000),WARN,98 rows (they distort revenue totals)
