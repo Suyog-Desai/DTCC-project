@@ -94,9 +94,9 @@ def land(s3, bucket: str, url: str, key: str) -> str:
         if remote is not None and size != remote:
             raise RuntimeError(f"Truncated download: got {size}, expected {remote}")
         validate(path, key)  # raises -> nothing is uploaded, old object survives
-        s3.upload_file(path, bucket, key)
         if existing and size == existing:
             return f"SKIP   s3://{bucket}/{key} (same size after download, {size:,} bytes)"
+        s3.upload_file(path, bucket, key)
     return f"UPLOAD s3://{bucket}/{key} ({size:,} bytes)"
 
 def main() -> int:
