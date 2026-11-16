@@ -2,7 +2,7 @@
 
 A small batch pipeline for the NYC TLC Yellow Taxi data. It lands the raw files in S3, cleans them with PySpark into an Iceberg table, adds a daily metrics table, checks the data, and lets Snowflake query the same Iceberg tables.
 
-Walkthrough recording: (add link here before sending)
+Pipeline recording: (https://drive.google.com/file/d/1znl3bXMWHRiRXywUH8kAnAORSVQl3M4B/view?usp=sharing)
 
 ```
 TLC website
