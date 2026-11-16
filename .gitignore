@@ -7,3 +7,5 @@ __pycache__/
 *.parquet
 access key.txt
 .ipynb_checkpoints/
+warehouse_local/
+.pytest_cache/

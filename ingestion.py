@@ -3,7 +3,7 @@
 Usage:
     export AWS_PROFILE=taxi
     export TAXI_BUCKET=your-bucket-name
-    python ingest.py --year 2025 --month 1
+    python ingestion.py --year 2025 --month 1
 
 """
 import argparse

@@ -2,8 +2,8 @@
 
     python job_clean.py --year 2025 --month 1 --bucket nyc-taxi-pipeline-124
 
-Safe to run again: new rows are added with MERGE INTO, so a second run adds nothing.
-The rejects folder for the month is overwritten, so it is also unchanged by a re-run.
+    
+    
 """
 import argparse
 import sys
